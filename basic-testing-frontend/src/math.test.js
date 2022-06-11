@@ -23,7 +23,7 @@ it("should yield NaN if a least one invalid number id provided", () => {
   expect(result).toBeNaN();
 });
 
-it("should yield a correct sum if an array of numric string values is provided", () => {
+it("should yield a correct sum if an array of numeric string values is provided", () => {
   const numbers = ["1", "2", "3"];
 
   const result = add(numbers);
@@ -46,7 +46,7 @@ it("should throw an error if no value is passed into the function", () => {
   const resultFn = () => {
     add();
   };
-  expect(resultFn).toThrow();
+  expect(resultFn).toThrow(/is not iterable/);
 });
 
 it("should throw an error if provided with multiple arguments instead of an array", () => {
@@ -55,5 +55,5 @@ it("should throw an error if provided with multiple arguments instead of an arra
   const resultFn = () => {
     add(num1, num2);
   };
-  expect(resultFn).toThrow();
+  expect(resultFn).toThrow(/is not iterable/);
 });
