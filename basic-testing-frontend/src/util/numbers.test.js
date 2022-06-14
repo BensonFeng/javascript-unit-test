@@ -28,3 +28,13 @@ describe("cleanNumbers()", () => {
     expect(cleanedNumbers[0]).toBeTypeOf("number");
   });
 });
+
+describe("cleanNumbers()", () => {
+  it("should throw an error if an array with at least one empty string is provided", () => {
+    const numberValues = ["1", ""];
+    const cleanFn = () => {
+      cleanNumbers(numberValues);
+    };
+    expect(cleanFn).toThrow();
+  });
+});
