@@ -25,7 +25,8 @@ describe("cleanNumbers()", () => {
   it("should return an array of number values if an array of string number values is provided", () => {
     const numberValues = ["1", "2"];
     const cleanedNumbers = cleanNumbers(numberValues);
-    expect(cleanedNumbers[0]).toBeTypeOf("number");
+    // expect(cleanedNumbers[0]).toBeTypeOf("number");
+    expect(cleanedNumbers).toEqual([1, 2]);
   });
 });
 
