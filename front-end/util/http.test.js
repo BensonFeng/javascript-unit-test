@@ -1,4 +1,5 @@
 import { it, expect, vi } from "vitest";
+import { HttpError } from "./errors";
 import { sendDataRequest } from "./http";
 
 const testResponseData = { testKey: "testData" };
@@ -9,7 +10,7 @@ const testFetch = vi.fn((url, options) => {
       return reject("Not a string.");
     }
     const testResponse = {
-      okay: true,
+      ok: true,
       json() {
         return new Promise((resolve, reject) => {
           resolve(testResponseData);
